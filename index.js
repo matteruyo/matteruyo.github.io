@@ -1,3 +1,9 @@
+function pad(num, size) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+}
+
 var x = setInterval (function () {
     exam = new Date (2021,9,29,2,0,0);
     now = new Date ();
@@ -16,9 +22,9 @@ var x = setInterval (function () {
     secs = Math.floor (mils / 1000);
     mils = mils - (secs * 1000);
 
-    $("#days").html (days);
-    $("#hours").html (hours);
-    $("#mins").html (mins);
-    $("#secs").html (secs);
-    $("#mils").html (mils);
+    $("#days").html (pad (days, 3));
+    $("#hours").html (pad (hours, 2));
+    $("#mins").html (pad (mins, 2));
+    $("#secs").html (pad (secs, 2));
+    $("#mils").html (pad (mils, 3));
 }, 1);
