@@ -5,7 +5,7 @@ function pad(num, size) {
 }
 
 var x = setInterval (function () {
-    exam = new Date (2021,9,29,2,0,0);
+    exam = new Date (2021,9,29,14,0,0);
     now = new Date ();
 
     mils = exam - now;
