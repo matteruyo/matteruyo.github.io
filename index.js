@@ -29,7 +29,7 @@ var x = setInterval (function () {
     $("#mils").html (pad (mils, 3));
 }, 1);
 
-var x = setInterval (function () {
+var y = setInterval (function () {
     exam = new Date (2021,10,1,14,0,0);
     now = new Date ();
 
