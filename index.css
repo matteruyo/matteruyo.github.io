@@ -20,7 +20,7 @@ body {
     transition: 0.2s;
 }
 
-#timer:hover {
+.timer:hover {
     box-shadow: 0 0 50px #474a4d;
 }
 
