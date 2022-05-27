@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function pad(num, size) {
+            num = num.toString();
+            while (num.length < size) num = "0" + num;
+            return num;
+        }
+
+        var x = setInterval (function () {
+            exam = new Date (2022,12,4,9,0,0);
+            now = new Date ();
+
+            mils = exam - now;
+
+            days = Math.floor (mils / 86400000);
+            mils = mils - (days * 86400000);
+
+            hours = Math.floor (mils / 3600000);
+            mils = mils - (hours * 3600000);
+
+            mins = Math.floor (mils / 60000);
+            mils = mils - (mins * 60000);
+
+            secs = Math.floor (mils / 1000);
+            mils = mils - (secs * 1000);
+
+            $("#days").html (pad (days, 3));
+            $("#hours").html (pad (hours, 2));
+            $("#mins").html (pad (mins, 2));
+            $("#secs").html (pad (secs, 2));
+            $("#mils").html (pad (mils, 3));
+        }, 1);
+    </script>
+
+    <title>日本語能力試験まで後どのぐらい？</title>
+</head>
+
+<body>
+    <a href="../index.html">
+        <div class = "timer box">
+            <h2>
+                <p>他の科目</p>
+            </h2>
+        </div>
+    </a>
+
+    <a href="https://jpf.org.au/language/for-learners/jlpt/" target="_blank">
+        <div class = "timer box">
+            <h2>
+                <p>日本語能力試験（12月4日）まで</p>
+            </h2>
+            <h1>
+                <p>〈</p>
+                <p id = "days"></p>d
+                <p id = "hours"></p>h 
+                <p id = "mins"></p>m 
+                <p id = "secs"></p>s 
+                <p id = "mils"></p>ms 
+                <p>〉</p>
+            </h1>
+        </div>
+    </a>
+</body>
+</html>
